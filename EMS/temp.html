@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand">EMS</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="registration.html">Registration</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container col-xl-8 mt-5">
+        <form action="registration.php" class="bg-light p-5" method="post" onsubmit="return RegistrationValidation()">
+            <div>
+                <h4 class="text-center">Registration</h4>
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="inputName" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="inputName" placeholder="Enter Name" name="inputName"
+                    value="Hitesh">
+            </div>
+
+            <div class="mb-3 mt-3">
+                <label for="inputEmail" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="Enter email" name="inputEmail"
+                    value="hitesh@gmail.com">
+            </div>
+
+            <div class="mb-3 mt-3">
+                <label for="inputMobileNumber" class="form-label">Mobile Number:</label>
+                <input type="number" class="form-control" id="inputMobileNumber" placeholder="Enter Mobile Number"
+                    name="inputMobileNumber" value="8347082327">
+            </div>
+
+            <div class="mb-3 mt-3">
+                <label for="inputAddress" class="form-label">Address:</label>
+                <textarea class="form-control" name="inputAddress" id="inputAddress" placeholder="Enter Address"
+                    rows="3">Rajkot</textarea>
+            </div>
+
+            <div class="row align-items-center mb-3 mt-3">
+                <div class="col-auto">
+                    <label class="form-label">Gender:</label>
+                </div>
+                <div class="col-auto form-check">
+                    <input class="form-check-input" type="radio" name="inputGender" id="inputGenderMale" value="Male"
+                        checked>
+                    <label class="form-check-label" for="inputGenderMale">
+                        Male
+                    </label>
+                </div>
+                <div class="col-auto form-check">
+                    <input class="form-check-input" type="radio" name="inputGender" id="inputGenderFemale"
+                        value="Female">
+                    <label class="form-check-label" for="inputGenderFemale">
+                        Female
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-3 mt-3">
+                <label for="inputDepartment" class="form-label">Select Department:</label>
+                <select class="form-select" id="departmentSelect" name="inputDepartment">
+                    <option selected disabled>Select a Department</option>
+                    <option value="1">Full Stack Developer</option>
+                    <option value="2">DevOps</option>
+                    <option value="3">QA</option>
+                    <option value="4">Flutter Developer</option>
+                    <option value="5">Android Developer</option>
+                    <option value="6">Graphic Designer</option>
+                </select>
+            </div>
+            <div class="row align-items-center mb-3 mt-3">
+                <div class="col-auto">
+                    <label class="form-label">Role:</label>
+                </div>
+                <div class="col-auto form-check">
+                    <input class="form-check-input" type="radio" name="inputRole" id="inputRoleAdmin" value="Admin"
+                        checked>
+                    <label class="form-check-label" for="inputRoleAdmin">
+                        Admin
+                    </label>
+                </div>
+                <div class="col-auto form-check">
+                    <input class="form-check-input" type="radio" name="inputRole" id="inputRoleUser" value="User">
+                    <label class="form-check-label" for="inputRoleUser">
+                        User
+                    </label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="inputPassword" class="form-label">Password:</label>
+                <input type="password" class="form-control" id="inputPassword" placeholder="Enter password"
+                    name="inputPassword" value="Hitesh">
+            </div>
+            <div class="mb-3">
+                <label for="inputConfirmPassword" class="form-label">Confirm Password:</label>
+                <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Enter password"
+                    name="inputConfirmPassword" value="Hitesh">
+            </div>
+
+            <div class="form-check mb-3">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="inputTerms" value="1" checked>Accept Terms and
+                    Conditions
+                </label>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+    <!-- Latest compiled JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="registration.js"></script>
+</body>
+
+</html>
+
+
+// function RegistrationValidation() {
+    //     // Clear previous error messages
+    //     document.getElementById('inputNameError').innerText = '';
+    //     document.getElementById('inputEmailError').innerText = '';
+    //     document.getElementById('inputMobileNumberError').innerText = '';
+    //     document.getElementById('inputPasswordError').innerText = '';
+    //     document.getElementById('inputConfirmPasswordError').innerText = '';
+    //     document.getElementById('inputDepartmentError').innerText = '';
+    //     document.getElementById('inputTermsError').innerText = '';
+    
+    //     // Get form values
+    //     const name = document.getElementById('inputName').value;
+    //     const email = document.getElementById('inputEmail').value;
+    //     const mobileNumber = document.getElementById('inputMobileNumber').value;
+    //     const password = document.getElementById('inputPassword').value;
+    //     const confirmPassword = document.getElementById('inputConfirmPassword').value;
+    //     const department = document.getElementById('departmentSelect').value;
+    //     const termsAccepted = document.querySelector('input[name="inputTerms"]').checked;
+    
+    //     let isValid = true;
+    
+    //     // Validate name (no digits and min length 2)
+    //     const nameRegex = /^[A-Za-z\s]{2,}$/;
+    //     if (!nameRegex.test(name)) {
+    //         document.getElementById('inputNameError').innerText = "Name must be at least 2 characters long and cannot contain digits.";
+    //         isValid = false;
+    //     }
+    
+    //     // Validate email (only gmail and yahoo.com)
+    //     const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail|yahoo)\.com$/;
+    //     if (!emailRegex.test(email)) {
+    //         document.getElementById('inputEmailError').innerText = "Email must be a valid gmail.com or yahoo.com address.";
+    //         isValid = false;
+    //     }
+    
+    //     // Validate mobile number (10 digits)
+    //     const mobileNumberRegex = /^[0-9]{10}$/;
+    //     if (!mobileNumberRegex.test(mobileNumber)) {
+    //         document.getElementById('inputMobileNumberError').innerText = "Mobile number must be exactly 10 digits.";
+    //         isValid = false;
+    //     }
+    
+    //     // Validate password (Uppercase, lowercase, and number)
+    //     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    //     if (!passwordRegex.test(password)) {
+    //         document.getElementById('inputPasswordError').innerText = "Password must be at least 8 characters long and include an uppercase letter, a lowercase letter, and a number.";
+    //         isValid = false;
+    //     }
+    
+    //     // Validate confirm password (match password)
+    //     if (password !== confirmPassword) {
+    //         document.getElementById('inputConfirmPasswordError').innerText = "Passwords do not match.";
+    //         isValid = false;
+    //     }
+    
+    //     // Validate department selection
+    //     if (department === "Select a Department") {
+    //         document.getElementById('inputDepartmentError').innerText = "Please select a department.";
+    //         isValid = false;
+    //     }
+    
+    //     // Validate terms and conditions
+    //     if (!termsAccepted) {
+    //         document.getElementById('inputTermsError').innerText = "You must accept the terms and conditions.";
+    //         isValid = false;
+    //     }
+    
+    //     // If all validations pass, allow form submission
+    //     return isValid;
+    // }
